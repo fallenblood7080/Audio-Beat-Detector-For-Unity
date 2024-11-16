@@ -1,0 +1,16 @@
+{
+  "name": "com.fallenblood.audiobeatdetector",
+  "version": "1.0.0",
+  "displayName": "Audio Beat Detector",
+  "description": "Detect the Beat of Music and Trigger the event",
+  "unity": "2022.1",
+  "author": {
+    "name": "Sagar Kushwaha(fallenblood)",
+    "email": "sagarkushwaha7080@gmail.com",
+    "url": ""
+  },
+  "dependencies": {
+  },
+  "keywords": ["Audio", "Music"],
+  "license": "MIT"
+}

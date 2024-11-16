@@ -1,0 +1,16 @@
+{
+    "name": "com.fallenblood.audiobeatdetector",
+    "rootNamespace": "Beat",
+    "references": [
+        "GUID:d0b10caa629c1bf43b90a0347a51e434"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
