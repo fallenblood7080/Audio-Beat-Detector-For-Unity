@@ -1,10 +1,9 @@
 using System;
-using UnityCommunity.UnitySingleton;
 using UnityEngine;
 
 namespace Beat
 {
-    public class BeatManager : MonoSingleton<BeatManager>
+    public class BeatManager : MonoBehaviour
     {
         private AudioSource _beatGenAudioSource;
         private float[] _spectrumData;
@@ -30,9 +29,8 @@ namespace Beat
 
         private bool _isBeatsInitialized = false;
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
 
             if (!TryGetComponent<AudioSource>(out _beatGenAudioSource))
             {
@@ -43,9 +41,6 @@ namespace Beat
         public void SetupBeat(AudioClip clip)
         {
             _isBeatsInitialized = false;
-
-            if (!IsInitialized)
-                return;
 
             if (_beatConfig == null)
             {
@@ -76,8 +71,6 @@ namespace Beat
             _lowEnergy = CalculateNormalizedEnergy(0, _beatConfig.LowBandCount);
             _midEnergy = CalculateNormalizedEnergy(_beatConfig.LowBandCount, _beatConfig.LowBandCount + _beatConfig.MidBandCount);
             _highEnergy = CalculateNormalizedEnergy(_beatConfig.LowBandCount + _beatConfig.MidBandCount, _beatConfig.LowBandCount + _beatConfig.MidBandCount + _beatConfig.HighBandCount);
-
-            // Trigger events based on thresholds
             TriggerEvent();
         }
 
