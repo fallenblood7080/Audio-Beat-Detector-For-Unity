@@ -1,1 +1,1 @@
-# AudioBeatGenerator
+# AudioBeatDetector
