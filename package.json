@@ -2,7 +2,7 @@
   "name": "com.fallenblood.audiobeatdetector",
   "version": "1.1.0",
   "displayName": "Audio Beat Detector",
-  "description": "Detect the Beat of Music and Trigger the event",
+  "description": "AudioBeatDetector is a Unity package that allows you to detect beats in an audio track by analyzing frequency bands and triggering events based on energy levels. It is ideal for creating rhythm-based games, music visualization, or any project that requires beat detection.",
   "unity": "2022.1",
   "author": {
     "name": "Sagar Kushwaha",
