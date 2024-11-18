@@ -1,6 +1,6 @@
 {
   "name": "com.fallenblood.audiobeatdetector",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "displayName": "Audio Beat Detector",
   "description": "Detect the Beat of Music and Trigger the event",
   "unity": "2022.1",
