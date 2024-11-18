@@ -37,11 +37,15 @@ The `BeatManager` uses a `BeatConfigSO` ScriptableObject to configure frequency 
 
 2. **Assign BeatConfigSO**:
    - Drag the `BeatConfigSO` file into the **BeatManager** component in the Unity Inspector.
+3. **Adding Audio Source**(Optional):
+	- Add the Audio Source Component to Beat Manager, it's the optional step, if you don't**BeatManager* will automatically add the Audio Source.
+4. **Audio Clip**:
+	- To assign audio Clip, call the `SetupBeat(clip)`.
+	```csharp
+	beatManager.SetupBeat(audioClip);
+	```
 
-3. **Audio Clip**:
-   - Assign your audio clip to the `AudioSource` in the `BeatManager` component.
-
-4. **Debug Visualization** (optional):
+5. **Debug Visualization** (optional):
    - Enable **Enable Debug Visualization** in the BeatManager to visualize the energy levels for each frequency band.
 
 ### 2. **Event Listeners**
@@ -54,6 +58,7 @@ You can attach actions to be triggered when the energy levels of specific freque
 For example:
 ```csharp
 BeatManager beatManager = GetComponent<BeatManager>();
+beatManager.SetupClip(yourClip);
 beatManager.OnLowEnergy += HandleLowEnergy;
 beatManager.OnMidEnergy += HandleMidEnergy;
 beatManager.OnHighEnergy += HandleHighEnergy;
@@ -69,6 +74,7 @@ The `BeatConfigSO` ScriptableObject allows you to fine-tune the beat detection b
 
 - **SmoothingFactor**: The factor used to smooth the energy values for each frequency band.
 - **SpectrumResolution**: The resolution for the frequency spectrum. Higher values provide more granular frequency analysis.
+- **MixerGroup** (Optional): - If you want to use a specific `AudioMixerGroup` to control audio routing, you can assign the `MixerGroup` in the BeatManager component. This is optional and is typically used if you want to control the volume or effects of the audio dynamically.
 - **Low/Mid/High Band Count**: Defines how many frequency bands are used for each energy level.
 - **Low/Mid/High Thresholds**: Thresholds to trigger the corresponding events when energy exceeds the set values.
 - **Event Call Interval**: Defines how often events are triggered after the previous event.
